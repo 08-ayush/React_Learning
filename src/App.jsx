@@ -16,9 +16,13 @@ function App() {
   const [todoItems, setTodoItems] = useState(initailTodoItems);
 
   const handleNewItem = (itemName, itemDueDate) => {
-    console.log(`New item Added: ${itemName} ${itemDueDate}`);
-    const newItems = [...todoItems, { name: itemName, dueDate: itemDueDate }];
-    setTodoItems(newItems);
+   // const newItems = [...todoItems, { name: itemName, dueDate: itemDueDate }];
+    // setTodoItems(newItems);
+    //!ye hm jb use krege jb purane items ko bhi rakhna ho ar uske base pr new upadte krna ho to
+    //!kyoki currvalue m hamesha up to date value hi milege it is called functional updates 
+    setTodoItems((currvalue)=>{
+      return [...currvalue,{name:itemName,dueDate:itemDueDate}]
+    })
   };
 
   const handleDeleteItem = (itemName, itemDueDate) => {

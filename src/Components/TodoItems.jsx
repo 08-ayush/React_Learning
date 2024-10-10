@@ -1,9 +1,14 @@
 import TodoItem from "./TodoItem";
-const TodoItems = ({ TodoItems,onDeleteClick }) => {
+const TodoItems = ({ TodoItems, onDeleteClick }) => {
   return (
-    <div classNameName="items-container">
+    <div className="items-container">
       {TodoItems.map((items) => (
-        <TodoItem todoDate={items.dueDate} todoName={items.name} onDeleteClick={onDeleteClick}/>
+        <TodoItem
+          key={items.name}
+          todoDate={items.dueDate}
+          todoName={items.name}
+          onDeleteClick={onDeleteClick}
+        />
       ))}
     </div>
   );
